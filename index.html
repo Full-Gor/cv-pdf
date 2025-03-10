@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Arnaud Barotteaux - Développeur Web</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&family=Roboto:wght@100;300;400;500;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        :root {
+            --primary: #0a2540;
+            --secondary: #00b4d8;
+            --accent: #00e5ff;
+            --light: #f8f9fa;
+            --dark: #121212;
+            --text-dark: #333333;
+        }
+
+        body {
+            background-color: white;
+            color: var(--text-dark);
+            line-height: 1.6;
+            padding: 0;
+            margin: 0;
+            font-size: 14px;
+        }
+
+        a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            padding: 15mm;
+            margin: 0 auto;
+            background: white;
+            position: relative;
+        }
+
+        .header {
+            display: flex;
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 20px;
+            align-items: center;
+        }
+
+        .profile-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 30px;
+            border: 3px solid var(--primary);
+        }
+
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: -70% 70%;
+        }
+
+        .header-content {
+            flex: 1;
+        }
+
+        .name {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 5px;
+        }
+
+        .title {
+            font-size: 16px;
+            color: var(--secondary);
+            margin-bottom: 15px;
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 13px;
+        }
+
+        .two-columns {
+            display: flex;
+            gap: 30px;
+        }
+
+        .left-column {
+            flex: 7;
+        }
+
+        .right-column {
+            flex: 3;
+        }
+
+        .section {
+            margin-bottom: 25px;
+        }
+
+        .section-title {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 18px;
+            color: var(--primary);
+            padding-bottom: 5px;
+            margin-bottom: 10px;
+            border-bottom: 1px solid var(--secondary);
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        .about {
+            margin-bottom: 25px;
+            text-align: justify;
+        }
+
+        .experience-item, .education-item {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px dotted #ddd;
+        }
+
+        .experience-item:last-child, .education-item:last-child {
+            border-bottom: none;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+        }
+
+        .item-title {
+            font-weight: 500;
+            color: var(--primary);
+            font-size: 16px;
+        }
+
+        .item-date {
+            color: var(--secondary);
+            font-style: italic;
+            font-size: 14px;
+        }
+
+        .item-subtitle {
+            font-weight: 500;
+            color: var(--secondary);
+            margin-bottom: 5px;
+            font-size: 14px;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 10px;
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .skill-item {
+            background-color: #f0f8ff;
+            color: var(--primary);
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 13px;
+            border: 1px solid var(--secondary);
+        }
+
+        .hobbies-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .hobby-item {
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .hobby-item::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--secondary);
+        }
+
+        @media print {
+            body {
+                width: 210mm;
+                height: 297mm;
+                margin: 0;
+                padding: 0;
+            }
+            
+            .page {
+                margin: 0;
+                border: none;
+                width: 100%;
+                min-height: 100%;
+                page-break-after: always;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <header class="header">
+            <div class="profile-image">
+                <img src="PROFIL.jpg" alt="Arnaud Barotteaux">
+            </div>
+            <div class="header-content">
+                <h1 class="name">Arnaud Barotteaux</h1>
+                <p class="title">Développeur Web Full Stack // Architecte Solutions</p>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <span>📧</span>
+                        <span>arnaudbarotteaux@gmail.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <span>📱</span>
+                        <span>+33 6 44 76 27 21</span>
+                    </div>
+                    <div class="contact-item">
+                        <span>🌐</span>
+                        <span><a href="https://portfolio-chi-neon-30.vercel.app/" target="_blank">portfolio-chi-neon-30.vercel.app</a></span>
+                    </div>
+                </div>
+            </div>
+        </header>
+        
+        <div class="about">
+            <p>Développeur web passionné spécialisé en développement front-end et back-end. Expert en HTML, CSS, WordPress, SQL, NoSQL, PHP et Symfony. Compétences en solutions no-code et AJAX. Expérience en gestion d'entreprise dans le secteur de la restauration. À la recherche de nouveaux défis pour mettre à profit mes compétences techniques et ma vision entrepreneuriale.</p>
+        </div>
+        
+        <div class="two-columns">
+            <div class="left-column">
+                <section class="section">
+                    <h2 class="section-title">Expérience professionnelle</h2>
+                    
+                    <div class="experience-item">
+                        <div class="item-header">
+                            <div class="item-title">Gérant</div>
+                            <div class="item-date">2015 - 2021</div>
+                        </div>
+                        <div class="item-subtitle">IslaFood, O'Tacos, Nashitos, Crousti-Poulet</div>
+                        <ul>
+                            <li>Gestion complète d'un établissement de restauration</li>
+                            <li>Management d'équipe et formation du personnel</li>
+                            <li>Optimisation des processus opérationnels</li>
+                            <li>Gestion financière et administrative</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="experience-item">
+                        <div class="item-header">
+                            <div class="item-title">Développeur Web Full Stack</div>
+                            <div class="item-date">2020 - Présent</div>
+                        </div>
+                        <div class="item-subtitle">Projets freelance</div>
+                        <ul>
+                            <li>Développement de sites web avec WordPress</li>
+                            <li>Création d'applications web avec PHP et Symfony</li>
+                            <li>Implémentation de solutions front-end responsive</li>
+                            <li>Gestion de bases de données SQL et NoSQL</li>
+                        </ul>
+                    </div>
+                </section>
+                
+                <section class="section">
+                    <h2 class="section-title">Formation</h2>
+                    
+                    <div class="education-item">
+                        <div class="item-header">
+                            <div class="item-title">Bac +2 Développement Web</div>
+                            <div class="item-date">2025</div>
+                        </div>
+                        <div class="item-subtitle">Formation professionnelle</div>
+                        <p>Formation complète en développement web front-end et back-end. Technologies modernes et méthodologies de développement.</p>
+                    </div>
+                    
+                    <div class="education-item">
+                        <div class="item-header">
+                            <div class="item-title">Brevet des Collèges</div>
+                            <div class="item-date">2000</div>
+                        </div>
+                        <div class="item-subtitle">Éducation nationale</div>
+                        <p>Formation générale avec compétences fondamentales.</p>
+                    </div>
+                </section>
+            </div>
+            
+            <div class="right-column">
+                <section class="section">
+                    <h2 class="section-title">Compétences techniques</h2>
+                    <ul class="skills-list">
+                        <li class="skill-item">HTML5</li>
+                        <li class="skill-item">CSS3/SASS</li>
+                        <li class="skill-item">WordPress</li>
+                        <li class="skill-item">SQL</li>
+                        <li class="skill-item">NoSQL</li>
+                        <li class="skill-item">No-Code</li>
+                        <li class="skill-item">Front-End</li>
+                        <li class="skill-item">Back-End</li>
+                        <li class="skill-item">AJAX</li>
+                        <li class="skill-item">PHP</li>
+                        <li class="skill-item">Symfony</li>
+                        <li class="skill-item">Gestion de projet</li>
+                        <li class="skill-item">Entrepreneuriat</li>
+                        <li class="skill-item">Management</li>
+                    </ul>
+                </section>
+                
+                <section class="section">
+                    <h2 class="section-title">Centres d'intérêt</h2>
+                    <ul class="hobbies-list">
+                        <li class="hobby-item">Sport</li>
+                        <li class="hobby-item">Lecture</li>
+                        <li class="hobby-item">Arts martiaux</li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
